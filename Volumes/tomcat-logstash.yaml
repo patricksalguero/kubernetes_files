@@ -20,7 +20,7 @@ spec:
           volumeMounts:
             - mountPath: /usr/local/tomcat/logs
               name: tomcat-log
-        - image: logstash
+        - image: logstash:6.5.1
           name: logstash
           args: ["-e input { file { path =>
           \"/mnt/localhost_access_log.*\" } } output { stdout { codec =>
