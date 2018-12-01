@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: ReplicaSet
+metadata:
+  name: node-js
+spec:
+  replicas: 5
+  selector:
+  template:
+    metadata:
+      labels:
+        name: node-js
+    spec:
+      containers:
+      - name: node-js
+        image: jonbaier/node-express-info:latest
+        ports:
+        - containerPort: 80
